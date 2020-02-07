@@ -1,5 +1,5 @@
 # pbxml
-An XML based Asterisk API Service written in C++  
+XML Asterisk API Service in C++  
 
 You don't need to struggle with spesific Asterisk commands, API commands. Your application can be integrated to Asterisk just using XML directives.
 
