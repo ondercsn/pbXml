@@ -42,6 +42,4 @@ As you below seen, you send only an XML (with any programming language) to Aster
 </PBX>
 ```
 
-I will upload the files as soon as possible and thanks in advance for your supports
-
 THIS COMMIT NEED TO BE UPDATE4D AND EDITED. INTALL NOTES ARE NOT UPLOADED YET
