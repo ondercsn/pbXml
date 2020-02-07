@@ -2,7 +2,7 @@
 An XML based Asterisk API Service written in C++  
 
 You needn't to know Asterisk commands, API commands, dialplans etc. Any development platform (.Net, Php, Python, Delphi and many more)
-which supports tcp/ip socket connections, can be integrated to Asterisk just using XML command. 
+which supports tcp/ip socket connections, can be integrated to Asterisk just using XML directives. 
 
 You can originate, hangup a call, redirect, conference etc. with a simple xml format and receive action result. Get Channel, SIP informations, system status,
 voice record path and more... 
