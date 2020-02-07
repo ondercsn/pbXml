@@ -1,13 +1,12 @@
 # pbxml
 An XML based Asterisk API Service written in C++  
 
-You needn't to know Asterisk commands, API commands, dialplans etc. Any development platform (.Net, Php, Python, Delphi and many more)
-which supports tcp/ip socket connections, can be integrated to Asterisk just using XML directives. 
+You don't need to struggle with spesific Asterisk commands, API commands. Your application can be integrated to Asterisk just using XML directives.
 
-You can originate, hangup a call, redirect, conference etc. with a simple xml format and receive action result. Get Channel, SIP informations, system status,
+It's prety easy to initiate, hangup or transfer the call, set conference, get current channels, SIP informations, system status,
 voice record path and more... 
 
-As you below seen, you send only an XML (with any programming language) to Asterisk Server 5095 port and receive the answer. 
+Following XML template is being sent to predefined port of server and received the response. 
 
 ```
 <?xml version='1.0' standalone='yes'?>
