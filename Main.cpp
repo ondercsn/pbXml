@@ -187,11 +187,11 @@ int main( int argc, char *argv[] )
 			}
 			if (argv[4] and strcmp(argv[4], "--start") == 0) 
 			{
-				printf("baslat");
+				printf("start");
 			}
 			if (argv[4] and strcmp(argv[4], "--stop") == 0) 
 			{
-				printf("durdur");
+				printf("stop");
 			}
 			
 			if (strlen(maxChannel) > 0 && strlen(callType) > 0 && strlen(callSource) > 0)
@@ -210,11 +210,8 @@ int main( int argc, char *argv[] )
 		if (strlen(statusProcess) > 1)
 		{
 			sprintf(killCommand,"kill %s",statusProcess);
-			//sprintf(killCommand,"killall pbxml");
 			system(killCommand);
-			//system("killall pbxml");
 			cout << "Service stoping " << setw(w.ws_col/2) << "[\033[32mOK\033[0m]" << endl;
-			//cout <<  << endl;
 		}
 		else
 		{
@@ -238,9 +235,7 @@ int main( int argc, char *argv[] )
 			if (strlen(statusProcess) > 1)
 			{
 				sprintf(killCommand,"kill %s",statusProcess);
-				//sprintf(killCommand,"killall pbxml");
 				system(killCommand);
-				//system("killall pbxml");
 				if (softRestarted == false)
 					cout << "Terminating previous sessions" << setw(w.ws_col/2) << "[\033[32mOK\033[0m]" << endl;
 			}
@@ -250,7 +245,6 @@ int main( int argc, char *argv[] )
 			pid_t sid = 0;
 
 			process_id = fork();
-			//main_process_id = getpid();
 			
 			if (process_id < 0)
 			{
@@ -282,11 +276,7 @@ int main( int argc, char *argv[] )
 			int serverSock 	= socket(AF_INET, SOCK_STREAM, 0);
 			int one = 1;
 			
-			//setsockopt(serverSock, SOL_SOCKET, SO_REUSEADDR, &one, sizeof(one));
-			//setsockopt(serverSock, SOL_SOCKET, SO_RCVTIMEO, (char *)&timeout, sizeof(timeout));
-			//setsockopt(serverSock, SOL_SOCKET, SO_SNDTIMEO, (char *)&timeout2, sizeof(timeout2));
-			
-			int clientPort 		= asterisk.RECEIVER_PORT;
+			int clientPort 	= asterisk.RECEIVER_PORT;
 			string clientServer = asterisk.RECEIVER_IP;
 		
 			sockaddr_in serverAddr;
@@ -320,11 +310,6 @@ int main( int argc, char *argv[] )
 				if (received.size() > 0 )
 				{
 					resultToSend = xmlparse.parse(received);
-					fprintf(fp,"-----");
-					fprintf(fp,receivedStr);
-					fprintf(fp,"\n => \n");
-					fprintf(fp,resultToSend.c_str());
-					fprintf(fp,"-----");
 					if (resultToSend.size() > 0)
 					{
 						write(clientSock, resultToSend.c_str(), resultToSend.size());
@@ -348,8 +333,8 @@ int main( int argc, char *argv[] )
 	}
 	else
 	{
-        printf("ERROR : Invalid paramter. \nUsage : %s start|stop|restart \n", argv[0]);
-        exit(1);
+        	printf("ERROR : Invalid paramter. \nUsage : %s start|stop|restart \n", argv[0]);
+        	exit(1);
 	}
 
 	fclose(fp);
